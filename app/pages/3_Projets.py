@@ -1,10 +1,21 @@
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 import streamlit as st
+
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
+
+from theme import apply_theme
 
 from utils.content_loader import ensure_initialized, inject_custom_css, load_content
 from utils.search import display_results
 from utils.ui import tag
+
+p = apply_theme(default="Deep Navy Pro", show_toggle=True)
 
 
 def render_projets() -> None:

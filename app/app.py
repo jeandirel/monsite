@@ -1,11 +1,17 @@
 from __future__ import annotations
 
 import base64
+import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
 import streamlit as st
 
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
+
+from theme import apply_theme
 from utils.content_loader import (
     PROFILE_IMAGE,
     ensure_initialized,
@@ -16,12 +22,15 @@ from utils.search import search
 from utils.ui import badge, card, metric, tag
 
 
+st.set_page_config(
+    page_title="Jean Direl · Ingénieur IA & Data Scientist",
+    page_icon="🤖",
+    layout="wide",
+)
+p = apply_theme(default="Deep Navy Pro", show_toggle=True)
+
+
 def main() -> None:
-    st.set_page_config(
-        page_title="Jean Direl · Ingénieur IA & Data Scientist",
-        page_icon="🤖",
-        layout="wide",
-    )
     ensure_initialized()
     inject_custom_css()
     content = load_content()

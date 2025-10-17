@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import json
+import sys
 from datetime import date
 from pathlib import Path
 from typing import Dict, List
@@ -9,6 +10,12 @@ from typing import Dict, List
 import pandas as pd
 import streamlit as st
 from slugify import slugify
+
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
+
+from theme import apply_theme
 
 from utils import auth
 from utils.content_loader import (
@@ -23,6 +30,8 @@ from utils.content_loader import (
 )
 from utils.storage import ASSETS_DIR, UPLOADS_DIR, uuid_str
 
+
+p = apply_theme(default="Deep Navy Pro", show_toggle=True)
 
 def rerun() -> None:
     try:
