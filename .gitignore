@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Streamlit cache
+.streamlit/secrets.toml
+
+# Local artifacts
+*.pdf
+*.docx
+.DS_Store
+Thumbs.db

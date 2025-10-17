@@ -1,0 +1,279 @@
+{
+  "about": {
+    "full_name": "Jean Direl",
+    "headline": "Ingénieur IA Junior & Data Scientist",
+    "location": "Rouen · Paris · Libreville",
+    "summary": "Ingénieur IA Junior en alternance au sein du Groupe ASTERA, spécialisé en machine learning, NLP et valorisation de données. Passionné par l'innovation responsable, j'aide les équipes métiers à transformer leurs processus grâce à des solutions IA pragmatiques, mesurables et sécurisées."
+  },
+  "contact": {
+    "email": "jedirkab70@gmail.com",
+    "phone": "+33 6 95 10 45 65",
+    "linkedin": "https://linkedin.com/in/jean-direl",
+    "address": [
+      "A1014-A, 5e rue du centre, Noisy-Le-Grand",
+      "39 rue Stanislas Girardin, 76000 Rouen"
+    ],
+    "birthday": "14 juillet 1997"
+  },
+  "education": [
+    {
+      "institution": "aivancity, la Grande École de l'IA et de la Data",
+      "location": "Paris & Nice, France",
+      "degree": "Diplôme d'ingénieur spécialisé en Intelligence Artificielle et Science des Données",
+      "period": "oct. 2022 – sept. 2026 (5e année)",
+      "highlights": [
+        "Alternance en IA appliquée chez CERP (Groupe ASTERA)",
+        "Vie associative : Basketball, missions citoyennes"
+      ]
+    },
+    {
+      "institution": "INPTIC Gabon",
+      "location": "Libreville, Gabon",
+      "degree": "Licence professionnelle en Génie Logiciel",
+      "period": "oct. 2017 – déc. 2021",
+      "highlights": [
+        "Spécialisation en développement d'applications, réseaux et gestion de projet",
+        "Vie associative : Basketball"
+      ]
+    },
+    {
+      "institution": "Lycée Charles Mefane",
+      "location": "Franceville, Gabon",
+      "degree": "Baccalauréat Scientifique (Mathématiques & Sciences Physiques)",
+      "period": "oct. 2014 – juil. 2015",
+      "highlights": [
+        "Section sport : Basketball"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Ingénieur IA Junior (Alternance)",
+      "company": "CERP – Groupe ASTERA",
+      "location": "Rouen, France",
+      "period": "oct. 2024 – aujourd’hui",
+      "missions": [
+        "Chatbot RAG documentaire pour Oxypharm : OCR → embeddings multilingual-e5-large → ChromaDB → LLM Mistral",
+        "IA de tri d’e-mails incidents : CamemBERT fine-tuné (multi-têtes Cat/Sous-cat/Élément), intégration FastAPI + Freshservice",
+        "Industrialisation : conteneurisation Docker/Kubernetes, APIs FastAPI, monitoring qualité de service"
+      ],
+      "impact": [
+        "Recherche documentaire accélérée de 25 à 35 %",
+        "Tri et dispatch incidents automatisés avec un délai moyen réduit d’environ 30 %",
+        "Précision de classification e-mails atteignant 80 – 88 % sur jeux tests internes"
+      ]
+    },
+    {
+      "title": "Chef de Projet Data-Driven Marketing IA (Stages successifs)",
+      "company": "PicturifyAI & COMPETITIVIA",
+      "location": "Les Longueraies & Ordino (Andorre) – Hybride",
+      "period": "juin 2024 – sept. 2024",
+      "missions": [
+        "Cadrage stratégique data marketing, segmentation et funnels hybrides code/no-code",
+        "A/B testing multicanal, dashboards sur Power BI et automatisation Power Query",
+        "Veille conformité RGPD et gouvernance des données"
+      ],
+      "impact": [
+        "CTR augmenté de 10 à 15 % grâce à la personnalisation",
+        "Taux de conversion amélioré de 8 à 12 % après itérations A/B",
+        "Cycle de reporting réduit d’environ 40 % via automatisations"
+      ]
+    },
+    {
+      "title": "Assistant Data Scientist",
+      "company": "SubstrateAI",
+      "location": "Cachan, France – Hybride",
+      "period": "juil. 2023 – juin 2024",
+      "missions": [
+        "Pipelines Python/SQL pour collecte capteurs IoT et analyses de qualité du lait",
+        "Modèles de base ML pour suivi de santé animale et anomalies de production",
+        "Dataviz et monitoring via Power BI, Grafana et MariaDB"
+      ],
+      "impact": [
+        "Jeux de données nettoyés et versionnés pour les équipes produit",
+        "Tableaux de bord opérationnels prêts pour les exploitants",
+        "Temps de préparation des données réduit de 30 à 40 %"
+      ]
+    },
+    {
+      "title": "Network Engineer IMS",
+      "company": "Airtel Gabon",
+      "location": "Libreville, Gabon",
+      "period": "juin 2022 – sept. 2022",
+      "missions": [
+        "Intégration et tests d’acceptation des services IMS, migrations et mises en production",
+        "Monitoring Grafana, support IT et fiabilisation des parcours critiques USSD Airtel Money",
+        "Formalisation des procédures d’acceptation et documentation technique"
+      ],
+      "impact": [
+        "Mises en production réussies sur services critiques USSD",
+        "Stabilité accrue des parcours clients après migrations",
+        "Reconnaissance managériale sur la qualité de la documentation"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Chatbot RAG métier — CERP (Groupe ASTERA)",
+      "period": "oct. 2024 – aujourd’hui",
+      "context": "Répondre en langage naturel aux questions métiers sur documents Oxypharm",
+      "contributions": [
+        "Pipeline OCR, nettoyage, embeddings multilingual-e5-large, vector store ChromaDB",
+        "Orchestration RAG avec LLM Mistral, suivi qualité, expérimentation multimodale"
+      ],
+      "stack": ["Python", "LLMs open-source", "ChromaDB", "Docker", "Kubernetes"]
+    },
+    {
+      "name": "IA de tri intelligent d’e-mails incidents — CERP",
+      "period": "oct. 2024 – aujourd’hui",
+      "context": "Automatiser la classification hiérarchique des tickets et intégration Freshservice",
+      "contributions": [
+        "Fine-tuning CamemBERT, architecture multi-têtes, APIs FastAPI",
+        "Suivi statistique et reporting sur traitements, réussites et erreurs"
+      ],
+      "stack": ["Python", "CamemBERT", "FastAPI", "Freshservice API"]
+    },
+    {
+      "name": "Détection de tendances — secteur automobile",
+      "period": "fév. 2024 – avr. 2024",
+      "context": "Identifier opportunités marché via analyses Data Science",
+      "contributions": [
+        "Modélisation de données, analyses Python/SQL, dashboards Power BI",
+        "Formalisation UML pour les tendances clés"
+      ],
+      "stack": ["Python", "SQL", "Power BI"]
+    },
+    {
+      "name": "Optimisation des LLMs pour l’assurance — Crédit Agricole (Zerlos)",
+      "period": "sept. 2023 – fév. 2024",
+      "context": "Accélérer et fiabiliser les réponses LLM pour les conseillers assurance",
+      "contributions": [
+        "Benchmark GPT-3, Mistral 7B, Llama 2 et fine-tuning adaptés au métier",
+        "Développement UI Flask et suivi de performance"
+      ],
+      "stack": ["Python", "Flask", "Hugging Face", "LLMs"]
+    },
+    {
+      "name": "Étude pilote & analyse éthique — Elevate.AI",
+      "period": "janv. 2023 – avr. 2023",
+      "context": "Détection d’émotions en visioconférence avec cadre éthique",
+      "contributions": [
+        "Analyse des données, dataviz et recommandations éthiques",
+        "Organisation projet avec Trello et suite Microsoft 365"
+      ],
+      "stack": ["Excel", "Trello", "Anaconda"]
+    }
+  ],
+  "certifications": [
+    {
+      "provider": "University of California, Berkeley",
+      "title": "AI Product Engineering: From Concept to Market",
+      "issue_date": "juin 2025",
+      "expiry_date": "janv. 2035",
+      "skills": ["Conception de produits IA centrés utilisateur", "Gouvernance éthique et responsable de l’IA"]
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "title": "Digital Transformation in Supply Chains",
+      "issue_date": "janv. 2025"
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "title": "Le cloud computing : Les concepts clés",
+      "issue_date": "sept. 2023"
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "title": "Les fondements du big data",
+      "issue_date": "sept. 2023"
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "title": "L'essentiel de SQL",
+      "issue_date": "août 2023"
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "title": "Les fondements de l'IoT",
+      "issue_date": "juil. 2023"
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "title": "Les fondements de l'intelligence artificielle",
+      "issue_date": "juil. 2023"
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "title": "Les fondements du machine learning",
+      "issue_date": "nov. 2022"
+    }
+  ],
+  "skills": {
+    "IA & Data": [
+      "Machine Learning",
+      "Deep Learning",
+      "Modélisation prédictive",
+      "Évaluation & optimisation",
+      "Traitement du langage naturel (NLP)",
+      "Vector Search / ChromaDB",
+      "OCR & traitement PDF"
+    ],
+    "Langages & Frameworks": [
+      "Python",
+      "SQL",
+      "R (notions)",
+      "C/C++",
+      "Java",
+      "C#",
+      "PHP",
+      "JavaScript",
+      "HTML/CSS",
+      "Flask",
+      "FastAPI",
+      "Pandas",
+      "NumPy"
+    ],
+    "Data Engineering & BI": [
+      "MariaDB",
+      "Power BI",
+      "Power Query",
+      "ETL/ELT",
+      "Grafana"
+    ],
+    "Ops & Outils": [
+      "Docker",
+      "Kubernetes",
+      "Git",
+      "Jira",
+      "Trello",
+      "Suite Microsoft 365"
+    ],
+    "Soft skills": [
+      "Communication",
+      "Gestion de crise",
+      "Résolution de problèmes",
+      "Adaptation",
+      "Travail en équipe",
+      "Gestion de projet"
+    ]
+  },
+  "recommendations": [
+    {
+      "name": "Tayane Lesty",
+      "role": "Information Technology Operations Manager, Airtel Gabon",
+      "date": "août 2024",
+      "highlights": [
+        "Management direct chez HSD Gabon pour Airtel Afrique",
+        "Appréciation des compétences techniques et de la fiabilité en production",
+        "Mises en production réussies sur Airtel Money et documentation structurée"
+      ],
+      "contact": "+241 74 57 74 73 · tayane@airtel.africa"
+    }
+  ],
+  "interests": [
+    "Basketball",
+    "Bénévolat et missions citoyennes",
+    "Veille sur l'éthique de l'IA",
+    "Innovation produit"
+  ]
+}

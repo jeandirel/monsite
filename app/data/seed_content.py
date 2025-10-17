@@ -1,0 +1,400 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any, Dict
+
+
+SEED_CONTENT: Dict[str, Any] = {
+    "profile": {
+        "nom": "Jean Direl NZE KABEYENE",
+        "headline": "Ingénieur IA Junior · Data Scientist",
+        "linkedin": "https://linkedin.com/in/jean-direl",
+        "telephone": "+33 6 95 10 45 65",
+        "adresses": [
+            "A1014-A, 5e rue du Centre, Noisy-le-Grand",
+            "39 rue Stanislas Girardin, 76000 Rouen",
+        ],
+        "email": "jedirkab70@gmail.com",
+        "anniversaire": "1997-07-14",
+        "photo": "assets/profile.jpg",
+        "cv_pdf": "assets/cv_jean_direl.pdf",
+        "interets": [
+            "Basketball",
+            "Bénévolat (missions citoyennes)",
+            "Veille IA responsable",
+            "Innovation produit",
+        ],
+        "bio": (
+            "Ingénieur IA en alternance au sein du Groupe ASTERA, spécialisé en NLP, "
+            "RAG et valorisation de données. J'accompagne les équipes métiers dans la conception "
+            "de solutions IA pragmatiques, mesurables et alignées avec l'éthique."
+        ),
+    },
+    "formation": {
+        "diplomes": [
+            {
+                "id": "8d742796-d5c6-4eb5-8aa1-65954f50bb88",
+                "ecole": "aivancity, la Grande École de l'IA et de la Data",
+                "intitule": "Diplôme d'ingénieur en Intelligence Artificielle et Science des Données",
+                "periode": "oct. 2022 – sept. 2026",
+                "lieu": "Paris & Nice, France",
+                "details": [
+                    "Alternance au sein du Centre d'Excellence IA & Data du Groupe ASTERA",
+                    "Engagement associatif : basketball, missions citoyennes",
+                ],
+            },
+            {
+                "id": "dbd88be1-3369-4b98-a348-327a4d3c23a1",
+                "ecole": "INPTIC Gabon",
+                "intitule": "Licence professionnelle en Génie Logiciel",
+                "periode": "oct. 2017 – déc. 2021",
+                "lieu": "Libreville, Gabon",
+                "details": [
+                    "Développement d'applications, réseaux et gestion de projet",
+                    "Pratique du basketball universitaire",
+                ],
+            },
+            {
+                "id": "7c061ec9-e508-4998-8dbb-9317e4061b15",
+                "ecole": "Lycée Charles Mefane",
+                "intitule": "Baccalauréat Scientifique (Mathématiques & Sciences Physiques)",
+                "periode": "oct. 2014 – juil. 2015",
+                "lieu": "Franceville, Gabon",
+                "details": [
+                    "Parcours scientifique, spécialité mathématiques",
+                    "Activités sportives : équipe de basketball",
+                ],
+            },
+        ],
+        "certifications": [
+            {
+                "id": "9ef0d0d0-ae2a-42e1-80c4-4bab81ca17e6",
+                "organisme": "University of California, Berkeley",
+                "titre": "AI Product Engineering: From Concept to Market",
+                "emission": "juin 2025",
+                "expiration": "janv. 2035",
+                "competences": [
+                    "Conception de produits IA centrés utilisateur",
+                    "Gouvernance éthique de l'IA",
+                ],
+            },
+            {
+                "id": "63252de5-7e62-4d3f-9712-89a829b9e495",
+                "organisme": "LinkedIn Learning",
+                "titre": "Digital Transformation in Supply Chains",
+                "emission": "janv. 2025",
+                "expiration": "",
+                "competences": [
+                    "Transformation digitale",
+                    "Optimisation supply chain",
+                ],
+            },
+            {
+                "id": "aa6b616e-4ff8-44cf-9e73-c62f6ae20bbe",
+                "organisme": "LinkedIn Learning",
+                "titre": "Le cloud computing : Les concepts clés",
+                "emission": "sept. 2023",
+                "expiration": "",
+                "competences": ["Cloud computing"],
+            },
+            {
+                "id": "ee92487c-4842-4d75-ae5b-6babec6da32c",
+                "organisme": "LinkedIn Learning",
+                "titre": "Les fondements du big data",
+                "emission": "sept. 2023",
+                "expiration": "",
+                "competences": ["Big Data", "Gouvernance des données"],
+            },
+            {
+                "id": "c5d2a56a-7084-4a9a-afa1-a24a67676559",
+                "organisme": "LinkedIn Learning",
+                "titre": "L'essentiel de SQL",
+                "emission": "août 2023",
+                "expiration": "",
+                "competences": ["SQL", "Analyse de données"],
+            },
+            {
+                "id": "1c77e0cd-2fbb-459a-b762-e66b7b65fe2c",
+                "organisme": "LinkedIn Learning",
+                "titre": "Les fondements de l'IoT",
+                "emission": "juil. 2023",
+                "expiration": "",
+                "competences": ["IoT", "Capteurs connectés"],
+            },
+            {
+                "id": "b8680941-d171-4114-b207-273d35168f9e",
+                "organisme": "LinkedIn Learning",
+                "titre": "Les fondements de l'intelligence artificielle",
+                "emission": "juil. 2023",
+                "expiration": "",
+                "competences": ["IA", "Ethique IA"],
+            },
+            {
+                "id": "2948cac7-b295-4a49-a4b0-85a6c36f9d43",
+                "organisme": "LinkedIn Learning",
+                "titre": "Les fondements du machine learning",
+                "emission": "nov. 2022",
+                "expiration": "",
+                "competences": ["Machine Learning"],
+            },
+        ],
+    },
+    "experiences": [
+        {
+            "id": "27a97e23-cf3a-4586-812c-d9622e649599",
+            "poste": "Ingénieur IA Junior (Alternance)",
+            "entreprise": "CERP · Groupe ASTERA",
+            "lieu": "Rouen, France",
+            "periode": "oct. 2024 – aujourd'hui",
+            "missions": [
+                "Chatbot RAG documentaire Oxypharm (OCR → embeddings multilingual-e5-large → ChromaDB → Mistral).",
+                "IA de tri d'e-mails incidents avec CamemBERT multi-têtes et APIs FastAPI.",
+                "Déploiement Docker/Kubernetes, intégration Freshservice et monitoring qualité.",
+            ],
+            "impacts": [
+                "Temps de recherche documentaire réduit de 25 à 35 %. ",
+                "Délai moyen de dispatch incidents réduit d'environ 30 %. ",
+                "Précision de classification e-mails 80–88 % sur jeux de test internes.",
+            ],
+            "tags": ["RAG", "LLM", "MLOps", "CamemBERT", "Freshservice", "Docker", "Kubernetes"],
+        },
+        {
+            "id": "762bc35a-5a14-4af1-a15d-44ceed1ccff2",
+            "poste": "Chef de Projet Data-Driven Marketing IA (stages successifs)",
+            "entreprise": "PicturifyAI & COMPETITIVIA",
+            "lieu": "Les Longueraies & Ordino (hybride)",
+            "periode": "juin 2024 – sept. 2024",
+            "missions": [
+                "Cadrage data marketing, segmentation clients et funnels code/no-code.",
+                "Expérimentations A/B multicanales et dashboards Power BI automatisés.",
+                "Garantie conformité RGPD et gouvernance data marketing.",
+            ],
+            "impacts": [
+                "CTR augmenté de 10 à 15 % via personnalisation.",
+                "Taux de conversion amélioré de 8 à 12 % après itérations A/B.",
+                "Cycle de reporting raccourci de 40 % via automatisations Power Query.",
+            ],
+            "tags": ["Marketing data", "Segmentation", "Power BI", "RGPD", "A/B testing"],
+        },
+        {
+            "id": "f1042dd8-e29e-4f58-b107-cedbdb7f46b8",
+            "poste": "Assistant Data Scientist",
+            "entreprise": "SubstrateAI",
+            "lieu": "Cachan, France (hybride)",
+            "periode": "juil. 2023 – juin 2024",
+            "missions": [
+                "Pipelines Python/SQL pour capteurs IoT et monitoring qualité du lait.",
+                "Modèles ML pour suivi de santé animale et détection d'anomalies.",
+                "Dataviz et alerting via Power BI, Grafana et MariaDB.",
+            ],
+            "impacts": [
+                "Jeux de données nettoyés et versionnés pour les équipes produit.",
+                "Tableaux de bord opérationnels livrés aux exploitants.",
+                "Temps de préparation des données réduit de 30 à 40 %.",
+            ],
+            "tags": ["IoT", "AgriTech", "Python", "SQL", "Grafana", "Power BI"],
+        },
+        {
+            "id": "1feaf7ff-e4fb-4679-9e29-edda09c119ff",
+            "poste": "Network Engineer IMS",
+            "entreprise": "Airtel Gabon",
+            "lieu": "Libreville, Gabon",
+            "periode": "juin 2022 – sept. 2022",
+            "missions": [
+                "Intégration, tests d'acceptation et mises en production services IMS.",
+                "Monitoring Grafana, support IT et fiabilisation parcours USSD Airtel Money.",
+                "Rédaction de procédures d'acceptation et documentation technique.",
+            ],
+            "impacts": [
+                "Mises en production réussies sur services critiques USSD.",
+                "Stabilité renforcée des parcours clients après migration.",
+                "Reconnaissance managériale pour la rigueur documentaire.",
+            ],
+            "tags": ["Télécom", "IMS", "USSD", "Monitoring", "DevOps"],
+        },
+    ],
+    "projets": [
+        {
+            "id": "3a5ba41a-a60e-4623-8f2b-1dfb0967ceff",
+            "titre": "Chatbot RAG métier Oxypharm",
+            "periode": "oct. 2024 – aujourd'hui",
+            "points": [
+                "Pipeline OCR, nettoyage, embeddings multilingual-e5-large et ChromaDB.",
+                "Orchestration RAG avec LLM Mistral et suivi qualité des réponses.",
+                "Feuille de route multimodale (texte+image) et déploiement Docker/Kubernetes.",
+            ],
+            "competences": ["RAG", "Mistral", "OCR", "ChromaDB", "Docker", "Kubernetes"],
+            "image": None,
+            "lien": "",
+        },
+        {
+            "id": "4ffd2529-1e9d-4f69-bf5c-ef04809c572d",
+            "titre": "IA de tri intelligent d'e-mails incidents",
+            "periode": "oct. 2024 – aujourd'hui",
+            "points": [
+                "Modèle CamemBERT hiérarchique Catégorie → Sous-catégorie → Élément.",
+                "Intégration FastAPI + Freshservice pour création automatique de tickets.",
+                "Monitoring des performances et tableaux de bord d'exploitation.",
+            ],
+            "competences": ["CamemBERT", "FastAPI", "NLP", "Freshservice", "MLOps"],
+            "image": None,
+            "lien": "",
+        },
+        {
+            "id": "4212a961-93b2-4395-bcaa-3d15e10ce10d",
+            "titre": "Détection de tendances secteur automobile",
+            "periode": "fév. 2024 – avr. 2024",
+            "points": [
+                "Modélisation de données et analyses Python/SQL.",
+                "Dashboards Power BI pour pilotage marketing.",
+                "Formalisation UML pour les axes stratégiques.",
+            ],
+            "competences": ["Python", "SQL", "Power BI", "UML"],
+            "image": None,
+            "lien": "",
+        },
+        {
+            "id": "c12fb74b-708d-4813-9007-d79ec9626a59",
+            "titre": "Optimisation des LLMs pour l'assurance",
+            "periode": "sept. 2023 – fév. 2024",
+            "points": [
+                "Benchmark GPT-3, Mistral 7B et Llama 2.",
+                "Fine-tuning adapté aux besoins métier assurance.",
+                "UI Flask pour tester les scénarios de réponse.",
+            ],
+            "competences": ["LLM", "Fine-tuning", "Flask", "Hugging Face"],
+            "image": None,
+            "lien": "",
+        },
+        {
+            "id": "4781f119-7f8a-454d-924b-e030c051f8e2",
+            "titre": "Étude pilote et analyse éthique Elevate.AI",
+            "periode": "janv. 2023 – avr. 2023",
+            "points": [
+                "Analyse des données de détection d'émotions en visioconférence.",
+                "Recommandations éthiques et cadrage projet.",
+                "Organisation via Trello et suite Microsoft 365.",
+            ],
+            "competences": ["Ethique IA", "Analyse de données", "Gestion de projet"],
+            "image": None,
+            "lien": "",
+        },
+        {
+            "id": "a9d59a08-6a82-4a4c-b968-732565316f59",
+            "titre": "Étude de l'autisme chez les enfants",
+            "periode": "oct. 2022 – déc. 2022",
+            "points": [
+                "Collecte et préparation de données issues d'études médicales.",
+                "Premiers modèles exploratoires et visualisations.",
+                "Constats partagés avec les équipes pédagogiques.",
+            ],
+            "competences": ["Data Analysis", "Python", "Communication"],
+            "image": None,
+            "lien": "",
+        },
+    ],
+    "recommandations": [
+        {
+            "id": "d41e7c3b-aa68-416b-8ea3-ed396528077c",
+            "auteur": "Tayane Lesty",
+            "poste": "Information Technology Operations Manager, Airtel Gabon",
+            "date": "août 2024",
+            "resume": (
+                "Jean Direl a piloté des projets IMS critiques avec rigueur et une grande capacité "
+                "de communication entre équipes techniques et métiers."
+            ),
+            "points": [
+                "Livraison d'intégrations USSD Airtel Money de bout en bout.",
+                "Documentation et procédures d'acceptation structurant la production.",
+                "Fiabilité et gestion de crise saluées par la direction.",
+            ],
+            "contact": {
+                "telephone": "+241 74 57 74 73",
+                "email": "tayane@airtel.africa",
+            },
+        }
+    ],
+    "competences": {
+        "data_ia": [
+            "Machine Learning",
+            "Deep Learning",
+            "RAG",
+            "ChromaDB",
+            "CamemBERT",
+            "Mistral 7B",
+            "Hugging Face",
+            "OCR/PDF",
+            "Vector Search",
+        ],
+        "langages_frameworks": [
+            "Python",
+            "SQL",
+            "C/C++",
+            "Java",
+            "C#",
+            "PHP",
+            "JavaScript",
+            "HTML/CSS",
+            "Flask",
+            "FastAPI",
+            "Pandas",
+            "NumPy",
+            "matplotlib",
+            "seaborn",
+        ],
+        "data_engineering_bi": [
+            "SSIS",
+            "MariaDB",
+            "DBeaver",
+            "Power BI",
+            "Power Query",
+        ],
+        "web": [
+            "Laravel",
+            "jQuery",
+            "Bootstrap",
+            "Git",
+        ],
+        "outils_ops": [
+            "Grafana",
+            "Jira",
+            "Trello",
+            "Anaconda",
+            "Microsoft 365",
+            "CI/CD",
+        ],
+        "secteurs": [
+            "Télécoms",
+            "Banque mobile",
+            "Support technique",
+            "Opérations",
+        ],
+        "softskills": [
+            "Communication",
+            "Gestion de crise",
+            "Résolution de problèmes",
+            "Adaptation",
+            "Travail en équipe",
+            "Gestion de projet",
+        ],
+    },
+}
+
+
+def get_seed_content() -> Dict[str, Any]:
+    return json.loads(json.dumps(SEED_CONTENT))
+
+
+def write_seed(path: Path) -> None:
+    path.write_text(
+        json.dumps(SEED_CONTENT, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "content.json"
+    write_seed(target)
+    print(f"Contenu d'exemple écrit dans {target}")
+

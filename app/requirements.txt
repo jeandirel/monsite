@@ -1,0 +1,9 @@
+streamlit>=1.36
+pandas>=2.0
+plotly>=5.20
+pydantic>=2.7
+rapidfuzz>=3.8
+Pillow>=10.0
+bcrypt>=4.0
+filelock>=3.13
+python-slugify>=8.0
